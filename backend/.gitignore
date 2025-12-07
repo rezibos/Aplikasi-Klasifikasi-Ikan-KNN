@@ -1,0 +1,40 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+.Python
+
+# Virtual Environment
+venv/
+env/
+
+# Model files (besar)
+*.h5
+*.keras
+
+# Uploads folder
+uploads/*
+
+# Dataset (besar, jangan commit)
+dataset/*
+seg_pred/
+seg_test/
+seg_train/
+*.zip
+
+# Keep important files
+!models/class_mapping.json
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,24 @@
+# Requirements untuk Smart Fish Classifier
+# Install dengan: pip install -r requirements_smart.txt
+
+# Core ML
+tensorflow>=2.10.0
+numpy>=1.21.0
+
+# Image Processing
+opencv-python>=4.6.0
+Pillow>=9.0.0
+
+# Data Science
+scikit-learn>=1.0.0
+matplotlib>=3.5.0
+
+# Web Framework
+Flask>=2.2.0
+flask-cors>=3.0.10
+
+# Optional (untuk monitoring)
+tensorboard>=2.10.0
+
+# Development
+pytest>=7.0.0

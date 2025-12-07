@@ -1,0 +1,54 @@
+{
+  "0": {
+    "name_en": "Black Sea Sprat",
+    "name_id": "Ikan Sprat Laut Hitam"
+  },
+  "1": {
+    "name_en": "Catfish",
+    "name_id": "Ikan Lele"
+  },
+  "2": {
+    "name_en": "Gilt Head Bream",
+    "name_id": "Ikan Gilthead"
+  },
+  "3": {
+    "name_en": "Horse Mackerel",
+    "name_id": "Ikan Kembung"
+  },
+  "4": {
+    "name_en": "Ikan Nila",
+    "name_id": "Ikan Nila"
+  },
+  "5": {
+    "name_en": "Kerapu",
+    "name_id": "Ikan Kerapu"
+  },
+  "6": {
+    "name_en": "Not Fish",
+    "name_id": "Bukan Ikan"
+  },
+  "7": {
+    "name_en": "Red Mullet",
+    "name_id": "Ikan Kuniran"
+  },
+  "8": {
+    "name_en": "Red Sea Bream",
+    "name_id": "Ikan Kakap Merah"
+  },
+  "9": {
+    "name_en": "Sea Bass",
+    "name_id": "Ikan Kakap Putih"
+  },
+  "10": {
+    "name_en": "Shrimp",
+    "name_id": "Udang"
+  },
+  "11": {
+    "name_en": "Striped Red Mullet",
+    "name_id": "Ikan Kuniran Bergaris"
+  },
+  "12": {
+    "name_en": "Trout",
+    "name_id": "Ikan Trout"
+  }
+}
