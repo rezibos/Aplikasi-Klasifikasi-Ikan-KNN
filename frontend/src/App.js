@@ -116,9 +116,9 @@ function App() {
 
     try {
       const formData = new FormData();
-      formData.append('image', selectedImage);
+      formData.append('file', selectedImage);
 
-      const response = await axios.post(`${API_URL}/api/predict`, formData, {
+      const response = await axios.post(`${API_URL}/predict`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -394,9 +394,46 @@ function App() {
                 
                 <div className="confidence">
                   <div className="confidence-label">Tingkat Keyakinan</div>
-                  <div className="confidence-value">{result.percentage}</div>
-                  <div className="confidence-badge">{result.certainty_text}</div>
+                  <div className="confidence-value">{result.confidence_percentage || result.percentage}</div>
+                  <div className="confidence-badge">{result.certainty_text || (result.confidence >= 0.8 ? 'Sangat Yakin' : result.confidence >= 0.6 ? 'Cukup Yakin' : 'Kurang Yakin')}</div>
                 </div>
+
+                {result.analysis && (
+                  <div className="analysis-details">
+                    <div className="analysis-title">🔬 Detail Analisis</div>
+                    <div className="analysis-grid">
+                      <div className="analysis-item">
+                        <span className="analysis-icon">🎨</span>
+                        <span className="analysis-text">{result.analysis.color}</span>
+                      </div>
+                      <div className="analysis-item">
+                        <span className="analysis-icon">📐</span>
+                        <span className="analysis-text">{result.analysis.shape}</span>
+                      </div>
+                      <div className="analysis-item">
+                        <span className="analysis-icon">🧮</span>
+                        <span className="analysis-text">{result.analysis.features_analyzed}</span>
+                      </div>
+                      <div className="analysis-item">
+                        <span className="analysis-icon">🎯</span>
+                        <span className="analysis-text">Model Accuracy: {result.analysis.model_accuracy}</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {result.top_3_predictions && (
+                  <div className="top-predictions">
+                    <h3 className="top-title">🏆 Top 3 Prediksi Alternatif</h3>
+                    {result.top_3_predictions.slice(0, 3).map((pred, index) => (
+                      <div key={index} className="prediction-item">
+                        <span className="pred-rank">{index + 1}</span>
+                        <span className="pred-name">{pred.class_id || pred.class}</span>
+                        <span className="pred-percent">{pred.confidence_percentage || `${(pred.confidence * 100).toFixed(2)}%`}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 {result.recommendations && result.recommendations.length > 0 && (
                   <div className="recommendations">
